@@ -109,8 +109,14 @@
     <h1>提交网站</h1>
     <p>欢迎推荐优质网站！我们会尽快审核并添加到导航中。</p>
 
-    <!-- 表单 -->
-    <form name="submit-site" method="POST" data-netlify="true" onsubmit="return validateForm()">
+    <form action="https://api.web3forms.com/submit" method="POST">
+      
+      <input type="hidden" name="access_key" value="c50c7570-be4b-4baa-8f5c-0c25c93486b5">
+
+      <input type="hidden" name="subject" value="导航站新网址提交">
+      
+      <input type="hidden" name="from_name" value="导航网站提交表单">
+
       <label for="name">网站名称:</label>
       <input type="text" id="name" name="name" placeholder="请输入网站名称" required>
 
@@ -118,20 +124,13 @@
       <input type="text" id="url" name="url" placeholder="请输入网站链接（例如：www.example.com）" required>
 
       <label for="description">网站描述:</label>
-      <textarea id="description" name="description" placeholder="请简要描述网站内容"></textarea>
+      <textarea id="description" name="description" placeholder="请简要描述网站内容" required></textarea>
+	  
+      <label for="email">您的联系邮箱 (选填):</label>
+      <input type="email" id="email" name="email" placeholder="选填，方便我们联系您">
 
       <button type="submit">提交</button>
     </form>
   </div>
-
-  <script>
-<form action="https://api.web3forms.com/submit" method="POST">
-  <input type="hidden" name="access_key" value="c50c7570-be4b-4baa-8f5c-0c25c93486b5">
-  <input type="text" name="name" required>
-  <input type="email" name="email" required>
-  <textarea name="message" required></textarea>
-  <button type="submit">Submit</button>
-</form>
-</script>
 </body>
 </html>
